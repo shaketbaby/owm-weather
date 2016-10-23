@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Widget</title>
+    <link rel="stylesheet" href="/static/css/weather-icons.min.css">
+    <link rel="stylesheet" href="/static/css/weather-icons-wind.min.css">
+    <style>
+      .widget {
+        margin: 1rem;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Following widget is loaded with:
+      &lt;div owm-widget title=&quot;Metric with wind&quot; unit=&quot;metric&quot; show-wind=&quot;true&quot;&gt;&lt;/div&gt;
+    </p>
+    <p>
+      <button onclick="addImperialWithoutWind()">Add another Imperial without Wind Data</button>
+      &lt;div owm-widget title=&quot;Imperial without wind&quot; unit=&quot;imperial&quot; show-wind=&quot;false&quot;&gt;&lt;/div&gt;
+    </p>
+
+    <div owm-widget title="Metric with wind" unit="metric" show-wind="true"></div>
+
+    <div id="imperialWithoutWind" title="Imperial without wind" unit="imperial" show-wind="false">
+    </div>
+
+    <script type="text/javascript" src="/widget.js"></script>
+    <script>
+      function addImperialWithoutWind() {
+        document.querySelector("#imperialWithoutWind").setAttribute("owm-widget", "");
+      }
+    </script>
+  </body>
+</html>
